@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * @author Benjamin Dahlmanns
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Todo {
 

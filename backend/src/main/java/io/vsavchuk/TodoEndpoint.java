@@ -16,12 +16,6 @@ import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
-/**
- * This is the REST endpoint of the application. Swagger annotations are used to add some meta data
- * to the class. This is then used by Swagger to generate additional documentation.
- *
- * @author Benjamin Dahlmanns
- */
 @OpenAPIDefinition(info = @Info(title = "Awesome little todo application to demonstrate Docker"))
 @RestController
 @RequestMapping("/todos")

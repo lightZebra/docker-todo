@@ -9,11 +9,6 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.themes.ValoTheme;
 
 
-/**
- * The TodoLayout class defines the layout that is used to display the todo list items
- * <p>
- * Original source taken from: https://github.com/vaadin-marcus/spring-boot-todo/
- */
 public class TodoLayout extends HorizontalLayout {
 	private final CheckBox done;
 	private final TextField text;

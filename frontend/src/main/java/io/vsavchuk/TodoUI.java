@@ -9,11 +9,6 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- * The TodoUI is responsible for setting up the basic layout and components of the application.
- * <p>
- * Original source taken from: https://github.com/vaadin-marcus/spring-boot-todo/
- */
 @SpringUI
 @Theme("valo")
 public class TodoUI extends UI {

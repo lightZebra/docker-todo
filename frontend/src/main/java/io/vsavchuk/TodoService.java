@@ -8,11 +8,6 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * This service handles all REST api calls to the backend.
- *
- * @author Benjamin Dahlmanns
- */
 @Component
 public class TodoService {
 

@@ -9,11 +9,6 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 
-/**
- * This class controls the behavior of the actual todo list
- * <p>
- * Original source taken from: https://github.com/vaadin-marcus/spring-boot-todo/
- */
 @UIScope
 @SpringComponent
 class TodoList extends VerticalLayout implements TodoChangeListener {
