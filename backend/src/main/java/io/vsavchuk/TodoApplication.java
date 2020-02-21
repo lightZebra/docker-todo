@@ -1,4 +1,4 @@
-package de.bendahl;
+package io.vsavchuk;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
