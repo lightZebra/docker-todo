@@ -1,0 +1,7 @@
+language: java
+jdk: openjdk11
+os: linux
+
+
+install:
+  - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -Ddockerfile.skip=true -B -V
