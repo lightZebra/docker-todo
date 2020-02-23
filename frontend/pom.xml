@@ -16,6 +16,10 @@
 	<name>demo-frontend</name>
 	<description>Demo Frontend using Vaadin and a REST Backend</description>
 
+	<properties>
+		<mainClass>io.vsavchuk.DemoFrontendApplication</mainClass>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.vaadin</groupId>
@@ -47,6 +51,44 @@
 					</environmentVariables>
 				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>${mainClass}</mainClass>
+						</manifest>
+					</archive>
+					<excludes>
+						<exclude>META-INF/*.SF</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.1.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<overWriteReleases>false</overWriteReleases>
+							<includeScope>runtime</includeScope>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
 		</plugins>
 	</build>
 

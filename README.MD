@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/lightZebra/docker-todo.svg?branch=master)](https://travis-ci.com/lightZebra/docker-todo)
+
 # Cheat Sheet
 This cheat sheet is meant to provide a high level overview of the project and help you to get started with the Docker 
 examples provided.
