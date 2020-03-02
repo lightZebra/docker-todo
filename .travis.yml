@@ -2,11 +2,11 @@ language: java
 jdk: openjdk11
 os: linux
 
-before_install:
-  - rm Dockerfile
-
 install:
   - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -Ddockerfile.skip=true -B -V
+
+after_script:
+  - zip dockerrun.zip Dockerrun.aws.json
 
 deploy:
   provider: elasticbeanstalk
@@ -16,6 +16,7 @@ deploy:
     secure: "Q4nQ/ms24AJhPPe9/E/PtjsieNNaBGT6ZsthkhgbQRMUDU6SCRMUR+4bK6AJoD7NTqI3urGUfrRBChp92IRYx747TU50Ujoe7sxUGw+pu1ISqdo3TB5rCH9Qbeh9HBqKQPqYUGjPl/zXY/5b65AKGuEPZNpuXB2oFgrRKfUH/aSUyDbIcfM2AvAy2w7bF+Fb+Q5v5gQudIJKZ3V3sFrlnck3+ZIr/tl4yLUoA+qjzH5otM+MQVXomM95wW6Ew/IC7v3yPTESb2LwOxNyft2jnIqto9JoNuIizeiOG9kJJkUY9W8QFJ7BsBuFK4lTLwkrQFssvxxEKrFSbCf8CmxOIOsSIWqCP2F4zeq29+oiQX3fWC2XFLE3PMp6MZ/dQUYub1WrXuATXK4Z0aNOanvycWWPcbFv4WYx4uW9vp9BSwMR7Qz2AjTRK5erLcAnyZglGIY8WlkhDnyoxcba8LqSGEOrmpr6aekRLo0fAGywWNSGxEtqZqxNpzhu+9JGBzRCPGeeWIYswuNIiG9Me04mvg4UGeh3wSpt1UYQ8D8l2vEq1bNf2rKa4YWtSpz0Mtlr83QaS9/0tabBhrplnH2OJrIZl/Mv9dIU+rCux1SBi0ifpECp3AfxxCIdnF4rx2Fe4Hco3GbuEhRSPZ5CD5OMM8EahozYXr8pfDt1dab6gf8="
   region: "us-east-2"
   app: "2-env"
+  zip_file: dockerrun.zip
   env: "2Env-env"
   bucket_name: "aws-quickstart-vlad"
   skip_cleanup: "true"
