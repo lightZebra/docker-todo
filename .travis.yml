@@ -2,7 +2,7 @@ language: java
 jdk: openjdk11
 os: linux
 
-before_deploy:
+before_install:
   - rm Dockerfile
 
 install:
