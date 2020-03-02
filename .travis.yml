@@ -2,6 +2,17 @@ language: java
 jdk: openjdk11
 os: linux
 
-
 install:
   - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -Ddockerfile.skip=true -B -V
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id:
+    secure: "Lf/rVZxJmQwTJ1or3eP9iODruV9B0t0yjGhHwS1q5JL9XqYAYLv4gRpH2j2gcJR/SoKOzCXTfIp3L0or2USQqkqmhAquQAz2BcWVfuzhFCfQqevv2E461RHT8nyKu1jd0jM0ewd3LlmI9OlfmbAODZ886UQGC69EY+o46Vt+nbruQZIb9xXFGdSYgBiKGPu1/5KUH7zKcKLHafNSeH5xxvkkZIuV+kk3JD3NZhNRYoKpm92chW1I3LvY1gf7fTzVnI9dWXBP+3dvBJYufWSC9LbvoATikPU67EbcG/gS33l0F9OHRewZypw0nSze5bhBwIgpGOVBjhpFHJ3gxIITo4DDakBJEIiM8YJs0EL5d+MT04YktJJM2iI6qkPfRxquVprV6lQs1Uii0QnkGB6oO8656lf33K/XFwtP/YTHElTicsqVxV8l0MaLBejjoeRFGrihDg+IZfzyILQT7wq38F/R2zfCuQnGDaxX9b4W27Dso+Ypdh7kpz0f7hfXtuV6Z0uCwBhElqw4WLwRA8pe+2YGT+G5F3f4da6ls6sz5RrnTrNlKUdC7GHB2pabY81yxmI+dn3QjziddOuLTPa/DOuCGnKFRnxdS8uOwQ6zaNAiJ9n0U9CM3XroHlqYvbA+hNV40Cul1jSwEdtmwSLWAP9KsTMvE0seF3sN8NA69LU="
+  secret_access_key:
+    secure: "ZSmC1HolQd09zajNltk67gBKBo0GvpJ4UEzggDfAWsBgpZ5dqZcVFORFTCyRN1NxB2Gf9ayFuhvstt3LZ/1irVM4KOVZY4VyjEU37+vUcD2GGMg/2Ik2HKVbIPkP+S9t6nW1FEjGBIp5Yp7k2FkpQ1ZDJ3dC8Tx4JTmE1EBfpJI7FADUcPPXEHmIDQ03J+7daD471jc4kgYzjSuDcQG5EbTgKhH9jWF9I0Ebcqv6MUeUFYhd+d7BRyky0molpZ5CU2WI8MFDlCy2iXk4SxmPe8eMzPBLozGYOF2k1SUBzWTfqhDkmKnY8I3XUrQSlxCUc5AL7mzwiNdCdyep7jThFgjbMAeFpVUpwggCI8a+eJ55UFJ5vYuLsKSZzn9qKmj9La4cRbPafkyj+9xU3c9y/fBt1atVgNNaexUptwAvRqmLjPy/Tov/fiUr8+tthPlYEYDqwCfofkaGTzj+3fy2iPcgN0cbtC3vWSU1L/iF7pXEPgI88LUZKKIs/sRfLJuKc3v3ldQ2GY4dODTkcgss5izXefIijllTLkuVnWSYFXrM2pmUgO06FuZeIEYwgjznh66VPVTorjxalzx9L42zndNU4HvPGvcvtFDV7NAq1Q/8ixXIRHQ0Gr2E1X3v+TYsm4V84oynlMsrq4S2drkZJGJiXZb+mr7bGi5pgIF+x6o="
+  region: "us-east-2"
+  app: "example-app-name"
+  env: "2-env"
+  bucket_name: "aws-quickstart-vlad"
+  skip_cleanup: "true"

@@ -1,0 +1,12 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+	"Name": "lightzebra/test-demo",
+	"Update": "true"
+  },
+  "Ports": [
+	{
+	  "ContainerPort": "80"
+	}
+  ]
+}
