@@ -5,7 +5,7 @@ os: linux
 install:
   - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -Ddockerfile.skip=true -B -V
 
-after_script:
+before_deploy:
   - zip dockerrun.zip Dockerrun.aws.json
 
 deploy:
